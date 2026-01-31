@@ -1,0 +1,40 @@
+name: Deploy to Google Apps Script
+
+on:
+  push:
+    branches:
+      - main
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install Clasp
+        run: npm install -g @google/clasp
+
+      - name: Write CLASPRC file
+        # This writes the secret to the home directory where clasp looks for it
+        run: echo '${{ secrets.CLASPRC_JSON }}' > ~/.clasprc.json
+
+      - name: Check Clasp Settings
+        # Ensure .clasp.json exists (it links the repo to the specific Script ID)
+        run: |
+          if [ ! -f ".clasp.json" ]; then
+            echo "Error: .clasp.json not found. You must include this file in your repo."
+            exit 1
+          fi
+
+      - name: Push to Google Apps Script
+        # -f forces the overwrite of the remote script with your GitHub code
+        run: clasp push -f
