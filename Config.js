@@ -8,7 +8,7 @@ var CONFIG = {
   // *** LOGGING SETTINGS ***
   // Set this to a Google Sheet ID to log errors (e.g., '1xE...'). 
   // Set to null to disable logging.
-  LOG_SHEET_ID: null, 
+  LOG_SHEET_ID: '1ybU8UtvC1yLx3UmprUsDidpr515g2h-8Q8B5Plk8mLo', 
 
   // *** NOTION CONFIGURATION ***
   NOTION: {
@@ -21,7 +21,7 @@ var CONFIG = {
     // Database Column Names
     // Note: The 'Title' column name is now auto-detected by the script.
     PROPS: {
-      FILE_COLUMN: 'Files'  // The name of the 'Files & media' column
+      FILE_COLUMN: 'Fichiers'  // The name of the 'Files & media' column
     }
   },
 
