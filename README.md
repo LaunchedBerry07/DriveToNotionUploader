@@ -1,4 +1,4 @@
-Google Drive to Notion Automation & Migration
+**Google Drive to Notion Automation & Migration**
 
 This Google Apps Script project automates the workflow between Google Drive folders and a Notion Database. It handles text extraction from documents, creates file links, and includes a migration tool to move legacy pages into a structured database.
 
