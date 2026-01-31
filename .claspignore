@@ -1,0 +1,6 @@
+/.md
+/.git
+.github/**
+.clasp.json
+.gitignore
+node_modules/**
